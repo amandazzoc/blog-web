@@ -19,7 +19,7 @@ include("conexao.php")
 
         <table class="table table-bordered table-striped " width="800">
             <?php
-            $query = mysqli_query($conexao, "SELECT * FROM blog INNER JOIN bloginfo ON blog_bloginfo_codigo = bloginfo_codigo INNER JOIN blogimgs ON blog_blogimgs_codigo = blogimgs_codigo INNER JOIN usuario ON blog_usuario_codigo = usuario_codigo");
+            $query = mysqli_query($conexao, "SELECT *, count(*)  as   imagens FROM blog INNER JOIN bloginfo ON blog_bloginfo_codigo = bloginfo_codigo INNER JOIN blogimgs ON blog_blogimgs_codigo = blogimgs_codigo INNER JOIN usuario ON blog_usuario_codigo = usuario_codigo group by blog_bloginfo_codigo");
             while ($exibe = mysqli_fetch_array($query)) {
                 ?>
                 <tr>

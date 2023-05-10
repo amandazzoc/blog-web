@@ -30,6 +30,9 @@ include("conexao.php")
                             <?php echo $exibe[6]?>
                 </td>
             </tr>
+            <tr>
+            <?php echo $exibe[11] ?>
+            </tr>    
             <?php } ?>
         </table>
     </div>
